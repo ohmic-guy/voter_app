@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Pressable, StyleSheet, Alert } from 'react-native';
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../services/firebase';
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword, auth } from '../services/auth';
 import { colors, fonts, spacing } from '../constants/theme';
 
 export default function AuthScreen() {

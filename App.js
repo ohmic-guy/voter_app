@@ -15,8 +15,7 @@ import GlossaryScreen from './screens/GlossaryScreen';
 import QuizScreen from './screens/QuizScreen';
 import NewsScreen from './screens/NewsScreen';
 import AuthScreen from './screens/AuthScreen';
-import { auth } from './services/firebase';
-import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { auth, onAuthStateChanged, signOut } from './services/auth';
 import { colors, fonts } from './constants/theme';
 
 const Tab = createBottomTabNavigator();
@@ -73,7 +72,7 @@ export default function App() {
             headerTintColor: colors.saffron,
             headerTitle: ({ children }) => <Text style={styles.headerTitle}>{children}</Text>,
             headerRight: () => (
-              <Pressable accessibilityLabel="Sign out" onPress={() => signOut(auth)} style={styles.signOutBtn}>
+              <Pressable accessibilityLabel="Sign out" onPress={() => signOut()} style={styles.signOutBtn}>
                 <Text style={styles.signOutText}>Logout</Text>
               </Pressable>
             ),
