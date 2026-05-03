@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, KeyboardAvoidingView, Platform, ScrollView, Pre
 import MessageBubble from '../components/MessageBubble';
 import { colors, fonts, spacing } from '../constants/theme';
 
-const API_KEY = process.env.EXPO_PUBLIC_GEMINI_API_KEY;
+const API_KEY = 'YOUR_GEMINI_API_KEY';
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
 const systemInstruction = 'You are a friendly, nonpartisan civic education assistant specializing in the Indian election system. Explain how Indian elections work — the role of the Election Commission of India, EVMs, the Constitution, Lok Sabha vs Rajya Sabha, state elections, voter registration, MCC, NOTA, and related topics — clearly in 2–4 short paragraphs. Never express political opinions or favor any party or politician. Focus purely on constitutional and procedural facts.';
 const suggestions = ['How does the EVM work?', 'What is the Model Code of Conduct?', 'What is NOTA and how do I use it?', 'What is the difference between Lok Sabha and Rajya Sabha?', 'How is the Prime Minister elected?'];
@@ -14,15 +14,9 @@ export default function AskScreen() {
   const [loading, setLoading] = useState(false);
   const listRef = useRef(null);
 
-  const geminiReady = Boolean(API_KEY);
-
   const conversationHistory = useMemo(() => messages.filter((m) => !m.typing && m.id !== 'welcome').map((m) => ({ role: m.role === 'user' ? 'user' : 'model', parts: [{ text: m.text }] })), [messages]);
   const send = async (textValue) => {
     const trimmed = textValue.trim(); if (!trimmed || loading) return;
-    if (!geminiReady) {
-      setMessages((prev) => [...prev, { id: `${Date.now()}-missing-key`, role: 'bot', text: 'Gemini is not configured yet. Add EXPO_PUBLIC_GEMINI_API_KEY to your .env file and restart the app.' }]);
-      return;
-    }
     const userMessage = { id: `${Date.now()}-user`, role: 'user', text: trimmed };
     const typingMsg = { id: `${Date.now()}-typing`, role: 'bot', typing: true, text: '' };
     setMessages((prev) => [...prev, userMessage, typingMsg]); setInput(''); setLoading(true);
