@@ -1,0 +1,18 @@
+export const glossaryTerms = [
+  { term: 'EVM (Electronic Voting Machine)', definition: 'A standalone electronic device used in Indian elections to record votes. It consists of a Control Unit (with the polling officer) and a Balloting Unit (with the voter).' },
+  { term: 'VVPAT (Voter Verified Paper Audit Trail)', definition: 'A machine attached to the EVM that prints a paper slip showing the voter\'s chosen candidate and symbol, visible for 7 seconds before dropping into a sealed box.' },
+  { term: 'NOTA (None of the Above)', definition: 'An option on the EVM introduced in 2013 allowing voters to reject all candidates. Even if NOTA gets the most votes, the candidate with the highest votes still wins.' },
+  { term: 'Model Code of Conduct (MCC)', definition: 'A set of guidelines issued by the ECI that governs the behavior of political parties and candidates from the announcement of elections until results are declared.' },
+  { term: 'Lok Sabha', definition: 'The lower house of India\'s Parliament, consisting of up to 543 directly elected members. Also called the House of the People.' },
+  { term: 'Rajya Sabha', definition: 'The upper house of India\'s Parliament, with 245 members. Members are elected by State Legislative Assemblies, not directly by the public.' },
+  { term: 'EPIC (Electors Photo Identity Card)', definition: 'The official Voter ID card issued by the ECI to registered voters. Also available as a digital e-EPIC downloadable from the Voter Helpline App.' },
+  { term: 'Returning Officer', definition: 'A government official appointed by the ECI to oversee the conduct of elections in a particular constituency.' },
+  { term: 'Constituency', definition: 'A geographic area that elects one representative to a legislative body. India has 543 Lok Sabha and 4,033+ State Assembly constituencies.' },
+  { term: 'Booth Level Officer (BLO)', definition: 'A government official responsible for maintaining the electoral roll for a specific polling booth area and verifying voter registration applications.' },
+  { term: 'Delimitation', definition: 'The process of redrawing the boundaries of electoral constituencies based on updated Census data, conducted by the Delimitation Commission.' },
+  { term: 'Anti-Defection Law', definition: 'Introduced via the 10th Schedule (1985), it disqualifies an elected member who defects from their party or votes against party directions without permission.' },
+  { term: "President's Rule", definition: 'Also called Article 356, it allows the Central Government to take over administration of a state when constitutional governance fails. State elections may be deferred.' },
+  { term: 'By-Election (Upchunav)', definition: 'An election held outside the regular cycle to fill a seat vacated due to death, resignation, or disqualification of a sitting member.' },
+  { term: 'Hung Parliament / Hung Assembly', definition: 'A situation where no single party or pre-poll alliance wins a majority of seats, requiring post-election coalition negotiations to form a government.' },
+  { term: 'Star Campaigner', definition: 'A prominent party leader (up to 40 per national party, 20 per state party) whose campaign expenses are NOT counted toward the candidate\'s election expenditure limit.' },
+];
